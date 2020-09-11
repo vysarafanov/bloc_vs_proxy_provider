@@ -12,8 +12,8 @@ import 'package:sealed_flutter_bloc/sealed_flutter_bloc.dart';
 class AuthBlocSolution extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SealedBlocBuilder2<AuthBloc, AuthState, UnauthenticatedState,
-        AuthenticatedState>(
+    return SealedBlocBuilder2<AuthenticationBloc, AuthState,
+        UnauthenticatedState, AuthenticatedState>(
       builder: (context, states) => states(
         (unauth) => WelcomePage(),
         (auth) => MultiProvider(

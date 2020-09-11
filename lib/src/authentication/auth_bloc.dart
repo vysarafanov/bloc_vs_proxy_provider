@@ -6,12 +6,12 @@ import 'package:bloc_vs_proxy_provider/src/authentication/auth_state.dart';
 import 'package:bloc_vs_proxy_provider/src/authentication/user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
+class AuthenticationBloc extends Bloc<AuthEvent, AuthState> {
   final AuthenticationRepository _authRepo;
 
   StreamSubscription<User> _userSubscription;
 
-  AuthBloc(this._authRepo) : super(AuthState.unauth()) {
+  AuthenticationBloc(this._authRepo) : super(AuthState.unauth()) {
     _userSubscription = _authRepo.user.listen(
       (user) => add(AuthEvent.userChanged(user)),
     );
