@@ -13,7 +13,7 @@ class StreamProviderSolution extends StatelessWidget {
     return MultiProvider(
       providers: [
         StreamProvider<User>(
-          create: (context) => context.read<AuthBloc>().map(
+          create: (context) => context.read<AuthenticationBloc>().map(
                 (state) => state.join(
                   (unAuth) => null,
                   (auth) => auth.user,
